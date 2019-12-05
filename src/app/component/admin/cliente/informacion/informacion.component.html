@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                
+                  <a class="navbar-brand" href="#">
+                        <img src="assets/img/goflet.png" class="logo" alt="">
+                      </a>
+              </nav>
+
+<div class="container">
+<table class="table table-striped table-bordered">
+<tr>
+    <td>ID</td>
+    <td>Nombre</td>
+    
+    <td>Gmail</td>
+    <td>Contraseña</td>
+</tr>
+<tr>
+<td> {{info.usuario.id}}</td>
+<td> {{info.usuario.nombre}}</td>
+
+<td> {{info.usuario.email}} </td>
+<td> {{info.usuario.password}} </td>
+</tr>
+
+</table>
+
+<form [formGroup]="signupForm" (ngSubmit)="Status(signupForm.value)">
+<mat-form-field class="sel">
+    <mat-label>Estatus</mat-label>
+    <select formControlName="status" required [(ngModel)]='add.status' id="status" matNativeControl required>
+      <option value="0">Desactivar</option>
+      <option value="1">Activar</option>
+    </select>
+    
+    <ng-template #temple>
+            <p> Usuario Activado</p>
+        </ng-template>
+</mat-form-field>
+
+    <button  type="submit" class="btn btn-info">Enviar</button>
+
+</form>
+<p *ngIf="user(); else temple" > </p>
+
+
+<form >
+<div class="fotos">
+
+    <img class="foto_trasera" width="300px" height="300px" *ngFor="let val of info.foto_trasera" src="{{val}}">
+    <br><br>
+
+    <img class="foto_frontal" width="300px" height="300px" *ngFor="let val of info.foto_frontal" src="{{val}}">
+    <br>
+
+</div>
+<!--<input type="text" [(ngModel)]='add.id_f' id="id_f"  name="id" value="{{info.id_fotocond}}">-->
+
+<button routerLink='/admin/cliente' type="submit" class="btn btn-eliminar" (click)="eliminar(info.usuario.id_usuario)"> Solicitar Foto </button>
+
+</form>
+</div>
+</body>
+
+
+
+
+</html>

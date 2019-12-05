@@ -1,0 +1,41 @@
+<app-admin></app-admin>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <p> PRUEBA</p>
+  
+  <div class="container">
+
+    
+
+    <table class="table table-striped table-bordered"   >
+        <tr>
+            <td>Servicio</td>
+            <td>Origen</td>
+            <td>Destino</td>
+            <td>Descripción</td>
+            <td>Vehiculo</td>
+            <td>Fecha</td>
+        
+        </tr>
+        <tr *ngFor="let servis of datos_servicios">
+          <td>{{servis.nombre}}</td>
+        </tr>
+        
+
+    
+</table>
+</div>
+
+
+
+
+</body>
+
+
+</html>
